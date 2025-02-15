@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+using namespace std;
+
 enum class Rank {
     Two = 2,
     Three = 3,

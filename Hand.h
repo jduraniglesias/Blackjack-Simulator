@@ -9,9 +9,9 @@ private:
 
 public:
     Hand();
-    void addCard(const Card& card);
-    int getTotalValue() const;
-    bool isBust() const;
     void clear();
+    int getTotalValue() const;
+    void addCard(const Card& card);
+    bool isBust() const;
     string toString() const;
 };
