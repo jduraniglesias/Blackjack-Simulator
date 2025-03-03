@@ -34,7 +34,7 @@ int Counter::getCardValue(Card card) {
 		case Rank::Queen:
 		case Rank::King:
 		case Rank::Ace:
-			value = 1;
+			value = -1;
 			break;
 		}
 	}
@@ -58,7 +58,7 @@ int Counter::getCardValue(Card card) {
 		case Rank::Queen:
 		case Rank::King:
 		case Rank::Ace:
-			value = 1;
+			value = -1;
 			break;
 		}
 	}
