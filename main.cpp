@@ -12,11 +12,12 @@ int main() {
     backgroundImage.loadFromFile("assets/mainMenuBackground.jpg");
     background.setTexture(&backgroundImage);
 
-    // Create instances of your menus
     MainMenu mainMenu(960, 720);
     SimulateMenu simulateMenu(960, 720);
-
+    
     GameState currState = GameState::MAIN_MENU;
+
+    window.setMouseCursorVisible(true);
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
@@ -24,10 +25,9 @@ int main() {
             }
             switch (currState) {
             case GameState::MAIN_MENU:
-                mainMenu.handleEvent(*event);
-                // When the user presses Enter, check which option is selected
-                if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
-                    if (keyReleased->scancode == sf::Keyboard::Scancode::Enter) {
+                mainMenu.handleEvent(*event, window);
+                if (const auto* mouseButton = event->getIf<sf::Event::MouseButtonReleased>()) {
+                    if (mouseButton->button == sf::Mouse::Button::Left) {
                         MainMenu::Option selected = mainMenu.getSelectedOption();
                         if (selected == MainMenu::Option::PLAY) {
                             currState = GameState::PLAY;
@@ -50,8 +50,6 @@ int main() {
                 break;
 
             case GameState::PLAY:
-                // For the PLAY state, you might implement your game logic.
-                // For now, pressing Escape returns you to the main menu.
                 if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
                     if (keyReleased->scancode == sf::Keyboard::Scancode::Escape) {
                         currState = GameState::MAIN_MENU;
@@ -62,8 +60,6 @@ int main() {
         }
 
         window.clear();
-
-        // Draw according to the current state
         switch (currState) {
         case GameState::MAIN_MENU:
             window.draw(background);
@@ -73,7 +69,6 @@ int main() {
             simulateMenu.draw(window);
             break;
         case GameState::PLAY:
-            // Draw your PLAY state content here.
             break;
         }
 

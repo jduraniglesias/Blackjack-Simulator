@@ -7,19 +7,14 @@
 
 class MainMenu {
 public:
-    // An enum to track the different options
     enum class Option { PLAY, SIMULATE, EXIT, NONE };
 
     MainMenu(float width, float height);
     ~MainMenu();
 
-    // Render the menu items
     void draw(sf::RenderWindow& window);
+    void handleEvent(sf::Event event, sf::RenderWindow& window);
 
-    // Handle input events (up, down, etc.)
-    void handleEvent(sf::Event event);
-
-    // Return the option selected when Enter is pressed
     Option getSelectedOption() const;
 
 private:

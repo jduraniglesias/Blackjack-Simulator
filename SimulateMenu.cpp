@@ -15,7 +15,6 @@ void SimulateMenu::draw(sf::RenderWindow& window) {
 }
 
 void SimulateMenu::handleEvent(sf::Event event) {
-    // You can expand this method if you need more interactive elements.
 }
 
 bool SimulateMenu::goBack(sf::Event event) {
