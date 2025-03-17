@@ -1,60 +1,60 @@
 #include "MainMenu.h"
 
+MainMenu::MainMenu(float width, float height) : selectedIndex(0) {
+    if (!font.openFromFile("assets/ttfFont.ttf")) {
+        std::cout << "Font not found!" << std::endl;
+    }
 
-MainMenu::MainMenu(float width, float height) {
-	if (!font.openFromFile("assets/ttfFont.ttf")) {
-		cout << "Font not found!" << endl;
-	}
+    // Create Play option
+    sf::Text playText(font, "Play", 70);
+    playText.setFillColor(sf::Color::Yellow);
+    playText.setPosition(sf::Vector2f(100.f, 200.f));
 
-	// Play
-	Text playText(font, "Play", 70);
-	playText.setFillColor(Color::White);
-	playText.setPosition(Vector2f(100.f, 200.f));
+    // Create Simulate option
+    sf::Text simulateText(font, "Simulate", 70);
+    simulateText.setFillColor(sf::Color::White);
+    simulateText.setPosition(sf::Vector2f(100.f, 300.f));
 
-	// Simulate
-	Text simulateText(font, "Simulate", 70);
-	simulateText.setFillColor(Color::White);
-	simulateText.setPosition(Vector2f(100.f, 300.f));
+    // Create Exit option
+    sf::Text exitText(font, "Exit", 70);
+    exitText.setFillColor(sf::Color::White);
+    exitText.setPosition(sf::Vector2f(100.f, 400.f));
 
-	// Exit
-	Text exitText(font, "Exit", 70);  // Changed variable name to exitText
-	exitText.setFillColor(Color::White);
-	exitText.setPosition(Vector2f(100.f, 400.f));
-
-	mainMenu.push_back(playText);
-	mainMenu.push_back(simulateText);
-	mainMenu.push_back(exitText);  // Now you have three items
-
-	MainMenuSelected = 0;
-	if (!mainMenu.empty()) {
-		mainMenu[MainMenuSelected].setFillColor(Color::Yellow);
-	}
- }
-
+    options.push_back(playText);
+    options.push_back(simulateText);
+    options.push_back(exitText);
+}
 
 MainMenu::~MainMenu() {
-
+    // Cleanup if necessary
 }
 
-void MainMenu::draw(RenderWindow& window) {
-	for (int i = 0; i < 3; i++) {
-		window.draw(mainMenu[i]);
-	}
+void MainMenu::draw(sf::RenderWindow& window) {
+    for (const auto& option : options) {
+        window.draw(option);
+    }
 }
 
-void MainMenu::MoveUp() {
-	mainMenu[MainMenuSelected].setFillColor(Color::White);
-	if (MainMenuSelected == 0) {
-		MainMenuSelected = mainMenu.size() - 1;
-	}
-	else {
-		MainMenuSelected--;
-	}	
-	mainMenu[MainMenuSelected].setFillColor(Color::Yellow);
+void MainMenu::handleEvent(sf::Event event) {
+    if (const auto keyReleased = event.getIf<sf::Event::KeyReleased>()) {
+        if (keyReleased->scancode == sf::Keyboard::Scancode::Up) {
+            options[selectedIndex].setFillColor(sf::Color::White);
+            selectedIndex = (selectedIndex == 0) ? options.size() - 1 : selectedIndex - 1;
+            options[selectedIndex].setFillColor(sf::Color::Yellow);
+        }
+        else if (keyReleased->scancode == sf::Keyboard::Scancode::Down) {
+            options[selectedIndex].setFillColor(sf::Color::White);
+            selectedIndex = (selectedIndex + 1) % options.size();
+            options[selectedIndex].setFillColor(sf::Color::Yellow);
+        }
+    }
 }
 
-void MainMenu::MoveDown() {
-	mainMenu[MainMenuSelected].setFillColor(Color::White);
-	MainMenuSelected = (MainMenuSelected + 1) % mainMenu.size();
-	mainMenu[MainMenuSelected].setFillColor(Color::Yellow);
+MainMenu::Option MainMenu::getSelectedOption() const {
+    switch (selectedIndex) {
+    case 0: return Option::PLAY;
+    case 1: return Option::SIMULATE;
+    case 2: return Option::EXIT;
+    default: return Option::NONE;
+    }
 }
