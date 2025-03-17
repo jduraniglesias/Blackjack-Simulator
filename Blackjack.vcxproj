@@ -146,6 +146,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayMenu.cpp" />
     <ClCompile Include="SimulateMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="Hand.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayMenu.h" />
     <ClInclude Include="SimulateMenu.h" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\mainMenuBackground.jpg" />
+    <Image Include="assets\settingsBackground.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

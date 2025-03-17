@@ -45,6 +45,9 @@
     <ClCompile Include="SimulateMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h">
@@ -74,6 +77,9 @@
     <ClInclude Include="SimulateMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PlayMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\ttfFont.ttf">
@@ -82,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\mainMenuBackground.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\settingsBackground.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

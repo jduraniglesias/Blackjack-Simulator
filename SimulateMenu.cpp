@@ -14,14 +14,25 @@ void SimulateMenu::draw(sf::RenderWindow& window) {
     window.draw(options[0]);
 }
 
-void SimulateMenu::handleEvent(sf::Event event) {
-}
-
-bool SimulateMenu::goBack(sf::Event event) {
-    if (const auto keyReleased = event.getIf<sf::Event::KeyReleased>()) {
-        if (keyReleased->scancode == sf::Keyboard::Scancode::Escape) {
-            return true;
+void SimulateMenu::handleEvent(sf::Event event, sf::RenderWindow& window) {
+    if (event.is<sf::Event::MouseMoved>()) {
+        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+        for (int i = 0; i < options.size(); i++) {
+            if (options[i].getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
+                options[selectedIndex].setFillColor(sf::Color::Yellow);
+                selectedIndex = i;
+            }
+            else {
+                options[i].setFillColor(sf::Color::White);
+            }
         }
     }
-    return false;
 }
+
+SimulateMenu::Option SimulateMenu::getSelectedOption() const {
+    switch (selectedIndex) {
+    case 0: return Option::BACK;
+    default: return Option::NONE;
+    }
+}
+
