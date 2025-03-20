@@ -16,6 +16,7 @@ public:
     void handleEvent(sf::Event event, sf::RenderWindow& window);
 
     Option getSelectedOption() const;
+    sf::FloatRect getSelectedOptionPos() const;
 
 private:
     std::vector<sf::Text> options;

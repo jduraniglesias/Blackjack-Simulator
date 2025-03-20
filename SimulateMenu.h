@@ -17,6 +17,7 @@ public:
 
     Option getSelectedOption() const;
 
+
 private:
     sf::Font font;
     std::vector<sf::Text> options;

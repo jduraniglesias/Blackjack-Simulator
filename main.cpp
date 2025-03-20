@@ -35,15 +35,18 @@ int main() {
                 mainMenu.handleEvent(*event, window);
                 if (const auto* mouseButton = event->getIf<sf::Event::MouseButtonReleased>()) {
                     if (mouseButton->button == sf::Mouse::Button::Left) {
+                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
                         MainMenu::Option selected = mainMenu.getSelectedOption();
-                        if (selected == MainMenu::Option::PLAY) {
-                            currState = GameState::PLAY;
-                        }
-                        else if (selected == MainMenu::Option::SIMULATE) {
-                            currState = GameState::SIMULATE;
-                        }
-                        else if (selected == MainMenu::Option::EXIT) {
-                            window.close();
+                        if (mainMenu.getSelectedOptionPos().contains(static_cast<sf::Vector2f>(mousePos))) {
+                            if (selected == MainMenu::Option::PLAY) {
+                                currState = GameState::PLAY;
+                            }
+                            else if (selected == MainMenu::Option::SIMULATE) {
+                                currState = GameState::SIMULATE;
+                            }
+                            else if (selected == MainMenu::Option::EXIT) {
+                                window.close();
+                            }
                         }
                     }
                 }
@@ -62,6 +65,7 @@ int main() {
                 break;
 
             case GameState::PLAY:
+                playMenu.handleEvent(*event, window);
                 if (const auto* mouseButton = event->getIf<sf::Event::MouseButtonReleased>()) {
                     if (mouseButton->button == sf::Mouse::Button::Left) {
                         PlayMenu::Option selected = playMenu.getSelectedOption();

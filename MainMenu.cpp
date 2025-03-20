@@ -55,3 +55,7 @@ MainMenu::Option MainMenu::getSelectedOption() const {
     default: return Option::NONE;
     }
 }
+
+sf::FloatRect MainMenu::getSelectedOptionPos() const {
+    return options[selectedIndex].getGlobalBounds();
+}
