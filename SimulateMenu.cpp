@@ -4,7 +4,7 @@ SimulateMenu::SimulateMenu(float width, float height) {
     if (!font.openFromFile("assets/ttfFont.ttf")) {
         std::cout << "Font not found!" << std::endl;
     }
-    sf::Text backButton(font, "Sim", 50);
+    sf::Text backButton(font, "Back", 50);
     backButton.setFillColor(sf::Color::White);
     backButton.setPosition(sf::Vector2f(10.f, height - 70.f));
     options.push_back(backButton);

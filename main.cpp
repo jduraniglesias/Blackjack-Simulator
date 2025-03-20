@@ -2,25 +2,32 @@
 #include "MainMenu.h"
 #include "SimulateMenu.h"
 #include "PlayMenu.h"
+#include "Game.h"
 
-enum class GameState { MAIN_MENU, PLAY, SIMULATE };
+enum class GameState { MAIN_MENU, PLAY, SIMULATE, GAME };
 
 int main() {
     sf::RenderWindow window(sf::VideoMode({ 960, 720 }), "Game");
     sf::RectangleShape menuBackground;
     sf::RectangleShape settingsBackground;
+    sf::RectangleShape gameBackground;
     menuBackground.setSize(sf::Vector2f(960.f, 720.f));
     settingsBackground.setSize(sf::Vector2f(960.f, 720.f));
+    gameBackground.setSize(sf::Vector2f(960.f, 720.f));
     sf::Texture menuBackgroundImage;
     sf::Texture settingsBackgroundImage;
+    sf::Texture gameBackgroundImage;
     menuBackgroundImage.loadFromFile("assets/mainMenuBackground.jpg");
     settingsBackgroundImage.loadFromFile("assets/settingsBackground.png");
+    gameBackgroundImage.loadFromFile("assets/gameBackground.png");
     menuBackground.setTexture(&menuBackgroundImage);
     settingsBackground.setTexture(&settingsBackgroundImage);
+    gameBackground.setTexture(&gameBackgroundImage);
 
     MainMenu mainMenu(960, 720);
     SimulateMenu simulateMenu(960, 720);
     PlayMenu playMenu(960, 720);
+    Game gameScreen(960, 720);
     
     GameState currState = GameState::MAIN_MENU;
 
@@ -72,10 +79,25 @@ int main() {
                         if (selected == PlayMenu::Option::BACK) {
                             currState = GameState::MAIN_MENU;
                         }
+                        else if (selected == PlayMenu::Option::START) {
+                            currState = GameState::GAME;
+                        }
+                    }
+                }
+                break;
+            case GameState::GAME:
+                gameScreen.handleEvent(*event, window);
+                if (const auto* mouseButton = event->getIf<sf::Event::MouseButtonReleased>()) {
+                    if (mouseButton->button == sf::Mouse::Button::Left) {
+                        Game::Option selected = gameScreen.getSelectedOption();
+                        if (selected == Game::Option::SKIP) {
+                            currState = GameState::MAIN_MENU;
+                        }
                     }
                 }
                 break;
             }
+            
         }
 
         window.clear();
@@ -91,6 +113,10 @@ int main() {
         case GameState::PLAY:
             window.draw(settingsBackground);
             playMenu.draw(window);
+            break;
+        case GameState::GAME:
+            window.draw(gameBackground);
+            gameScreen.draw(window);
             break;
         }
 

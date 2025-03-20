@@ -93,5 +93,8 @@
     <Image Include="assets\settingsBackground.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\gameBackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

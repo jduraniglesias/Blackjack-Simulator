@@ -165,6 +165,7 @@
     <Font Include="assets\ttfFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\gameBackground.png" />
     <Image Include="assets\mainMenuBackground.jpg" />
     <Image Include="assets\settingsBackground.png" />
   </ItemGroup>

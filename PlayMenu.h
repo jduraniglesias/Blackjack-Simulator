@@ -7,7 +7,7 @@
 class PlayMenu {
 public:
 
-    enum class Option { BACK, NONE };
+    enum class Option { BACK, START, NONE };
 
     PlayMenu(float width, float height);
 
