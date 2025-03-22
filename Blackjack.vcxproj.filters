@@ -85,6 +85,9 @@
     <Font Include="assets\ttfFont.ttf">
       <Filter>Resource Files</Filter>
     </Font>
+    <Font Include="assets\arial.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\mainMenuBackground.jpg">
@@ -94,6 +97,165 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\gameBackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\2_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\2_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\2_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\2_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\3_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\3_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\3_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\3_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\4_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\4_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\4_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\4_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\5_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\5_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\5_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\5_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\6_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\6_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\6_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\6_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\7_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\7_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\7_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\7_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\8_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\8_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\8_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\8_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\9_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\9_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\9_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\9_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\10_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\10_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\10_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\10_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\ace_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\ace_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\ace_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\ace_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\back_of_card.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\jack_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\jack_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\jack_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\jack_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\king_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\king_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\king_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\king_of_spades.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\queen_of_clubs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\queen_of_diamonds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\queen_of_hearts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\queen_of_spades.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
