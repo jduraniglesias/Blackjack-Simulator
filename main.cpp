@@ -8,23 +8,23 @@
 enum class GameState { MAIN_MENU, PLAY, SIMULATE, GAME };
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({ 960, 720 }), "Game");
+    sf::RenderWindow window(sf::VideoMode({ 1200, 800 }), "Game");
     sf::RectangleShape menuBackground;
     sf::RectangleShape settingsBackground;
     sf::RectangleShape gameBackground;
-    menuBackground.setSize(sf::Vector2f(960.f, 720.f));
-    settingsBackground.setSize(sf::Vector2f(960.f, 720.f));
-    gameBackground.setSize(sf::Vector2f(960.f, 720.f));
+    menuBackground.setSize(sf::Vector2f(1200.f, 800.f));
+    settingsBackground.setSize(sf::Vector2f(1200.f, 800.f));
+    gameBackground.setSize(sf::Vector2f(1200.f, 800.f));
     Texture textures;
     textures.loadTextures();
     menuBackground.setTexture(&textures.menuBackgroundImage);
     settingsBackground.setTexture(&textures.settingsBackgroundImage);
     gameBackground.setTexture(&textures.gameBackgroundImage);
 
-    MainMenu mainMenu(960, 720);
-    SimulateMenu simulateMenu(960, 720);
-    PlayMenu playMenu(960, 720);
-    Game gameScreen(960, 720);
+    MainMenu mainMenu(1200, 800);
+    SimulateMenu simulateMenu(1200, 800);
+    PlayMenu playMenu(1200, 800);
+    Game gameScreen(1200, 800);
     
     GameState currState = GameState::MAIN_MENU;
 
