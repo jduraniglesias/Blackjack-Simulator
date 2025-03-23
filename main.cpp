@@ -3,6 +3,7 @@
 #include "SimulateMenu.h"
 #include "PlayMenu.h"
 #include "Game.h"
+#include "Texture.h"
 
 enum class GameState { MAIN_MENU, PLAY, SIMULATE, GAME };
 
@@ -14,15 +15,11 @@ int main() {
     menuBackground.setSize(sf::Vector2f(960.f, 720.f));
     settingsBackground.setSize(sf::Vector2f(960.f, 720.f));
     gameBackground.setSize(sf::Vector2f(960.f, 720.f));
-    sf::Texture menuBackgroundImage;
-    sf::Texture settingsBackgroundImage;
-    sf::Texture gameBackgroundImage;
-    menuBackgroundImage.loadFromFile("assets/mainMenuBackground.jpg");
-    settingsBackgroundImage.loadFromFile("assets/settingsBackground.png");
-    gameBackgroundImage.loadFromFile("assets/gameBackground.png");
-    menuBackground.setTexture(&menuBackgroundImage);
-    settingsBackground.setTexture(&settingsBackgroundImage);
-    gameBackground.setTexture(&gameBackgroundImage);
+    Texture textures;
+    textures.loadTextures();
+    menuBackground.setTexture(&textures.menuBackgroundImage);
+    settingsBackground.setTexture(&textures.settingsBackgroundImage);
+    gameBackground.setTexture(&textures.gameBackgroundImage);
 
     MainMenu mainMenu(960, 720);
     SimulateMenu simulateMenu(960, 720);

@@ -1,0 +1,7 @@
+TODO:
+
+1) Dealer Hand:
+	- back of card texture stacked
+	- verify the amount of cards (6-decks)
+	- shuffle mechanism
+	- distribution mechanism
