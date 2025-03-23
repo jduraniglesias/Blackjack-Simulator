@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
 
-using namespace std;
-
+// Card rank enumeration, with explicit integer values
 enum class Rank {
     Two = 2,
     Three = 3,
@@ -18,6 +17,8 @@ enum class Rank {
     King = 13,
     Ace = 14
 };
+
+// Card suit enumeration
 enum class Suit {
     Clubs,
     Diamonds,
@@ -25,14 +26,20 @@ enum class Suit {
     Spades
 };
 
+// Class representing a playing card
 class Card {
 private:
-    Rank rank;
-    Suit suit;
+    Rank rank;   // Card rank (2–Ace)
+    Suit suit;   // Card suit (Clubs, Diamonds, etc.)
 
 public:
+    // Constructor
     Card(Rank r, Suit s);
+
+    // Accessors
     Rank getRank() const;
     Suit getSuit() const;
-    string toString() const;
+
+    // Returns a string representation (e.g., "Ace of Spades")
+    std::string toString() const;
 };
