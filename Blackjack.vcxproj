@@ -164,6 +164,7 @@
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="assets\arial.ttf" />
     <Font Include="assets\ttfFont.ttf" />
   </ItemGroup>
   <ItemGroup>

@@ -91,6 +91,9 @@
     <Font Include="assets\ttfFont.ttf">
       <Filter>Resource Files</Filter>
     </Font>
+    <Font Include="assets\arial.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\mainMenuBackground.jpg">
