@@ -51,6 +51,6 @@ private:
 	};
 
 public:
-	char getMove(Hand& hand) const;
-	int getBet(int count, int balance) const;
+	char getMove(Hand& hand, Card dealerShowing) const;
+	int getBet(int runningCount, int decksRemaining, int bankroll, bool sleuthMode) const;
 };

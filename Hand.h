@@ -16,4 +16,6 @@ public:
     bool isBust() const;
     bool isBlackjack() const;
     string toString() const;
+    bool isSoft() const;
+    bool isPair() const;
 };
