@@ -1,4 +1,5 @@
 #pragma once
+#include "Hand.h"
 class OptimalPlay {
 private:
 	//H means hit, D means double down, S means stand 
@@ -51,6 +52,6 @@ private:
 	};
 
 public:
-	char getMove(Hand& hand, Card dealerShowing) const;
-	int getBet(int runningCount, int decksRemaining, int bankroll, bool sleuthMode) const;
+	char getMove(Hand& hand, Card dealerShowing);
+	int getBet(int runningCount, int decksRemaining, int bankroll, bool sleuthMode);
 };

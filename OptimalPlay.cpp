@@ -1,8 +1,6 @@
 #include "OptimalPlay.h"
-#include "Hand.h"
 using namespace std;
-
-char OptimalPlay::getMove(Hand& hand, Card dealerShowing) const {
+char OptimalPlay::getMove(Hand& hand, Card dealerShowing) {
 	int totalHand = hand.getTotalValue();
 	bool isSoft = hand.isSoft();
 	int dealerCard = static_cast<int> (dealerShowing.getRank());
@@ -16,12 +14,11 @@ char OptimalPlay::getMove(Hand& hand, Card dealerShowing) const {
 		return SoftTotal[totalHand - 13][dealerCard - 2];
 	}
 	return HardTotal[totalHand - 4][dealerCard - 2];
-
 }
 //sleuthMode means if you are trying to avoid casino detection, making higher and higher bets is good
 //but if you bet too high when your at an advantage then the casino gets suspicious
 //sleuth mode true means capped bets, false means uncapped bet
-int OptimalPlay::getBet(int runningCount, int decksRemaining, int bankroll, bool sleuthMode) const {
+int OptimalPlay::getBet(int runningCount, int decksRemaining, int bankroll, bool sleuthMode){
 	int trueCount = runningCount / decksRemaining;
 	int bettingUnit = bankroll / 1000;
 	int totalBetSize = bettingUnit * (trueCount - 1);
