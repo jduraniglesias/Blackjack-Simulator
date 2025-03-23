@@ -25,6 +25,7 @@ private:
     sf::Font font;
     std::vector<sf::Text> options;
     std::vector<std::string> gameSettings = {"NO", "15", "200", "Standard"};
+    std::vector<sf::RectangleShape> cards;
     int selectedIndex;
 };
 

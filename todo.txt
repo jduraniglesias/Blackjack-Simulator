@@ -5,3 +5,14 @@ TODO:
 	- verify the amount of cards (6-decks)
 	- shuffle mechanism
 	- distribution mechanism
+
+2) Player hands:
+	- Get the player functions working (hit, stand, double, split)
+	- add the other 6 players
+	- Show all player cards on table
+
+3) Game functionality:
+	- Betting amount
+	- player functions
+	- looping the game
+	- leaving table

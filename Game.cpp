@@ -4,10 +4,10 @@ Game::Game(float width, float height) {
     if (!font.openFromFile("assets/ttfFont.ttf")) {
         std::cout << "Font not found!" << std::endl;
     }
-    sf::Text backButton(font, "Skip", 50);
-    backButton.setFillColor(sf::Color::White);
-    backButton.setPosition(sf::Vector2f(width - 80.f, 10.f));
-    options.push_back(backButton);
+    sf::Text skipButton(font, "Skip", 50);
+    skipButton.setFillColor(sf::Color::White);
+    skipButton.setPosition(sf::Vector2f(width - 80.f, 10.f));
+    options.push_back(skipButton);
 }
 
 void Game::draw(sf::RenderWindow& window) {
