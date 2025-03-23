@@ -5,35 +5,51 @@
 #include "Game.h"
 #include "Texture.h"
 
+// Enum to manage different game states
 enum class GameState { MAIN_MENU, PLAY, SIMULATE, GAME };
 
 int main() {
+    // Create main game window
     sf::RenderWindow window(sf::VideoMode({ 1200, 800 }), "Game");
+
+    // Backgrounds for different screens
     sf::RectangleShape menuBackground;
     sf::RectangleShape settingsBackground;
     sf::RectangleShape gameBackground;
+
     menuBackground.setSize(sf::Vector2f(1200.f, 800.f));
     settingsBackground.setSize(sf::Vector2f(1200.f, 800.f));
     gameBackground.setSize(sf::Vector2f(1200.f, 800.f));
+
+    // Load textures for backgrounds
     Texture textures;
     textures.loadTextures();
     menuBackground.setTexture(&textures.menuBackgroundImage);
     settingsBackground.setTexture(&textures.settingsBackgroundImage);
     gameBackground.setTexture(&textures.gameBackgroundImage);
 
+    // Initialize menus and game screen
     MainMenu mainMenu(1200, 800);
     SimulateMenu simulateMenu(1200, 800);
     PlayMenu playMenu(1200, 800);
     Game gameScreen(1200, 800);
-    
+
+    // Start at the main menu
     GameState currState = GameState::MAIN_MENU;
 
+    // Show the mouse cursor
     window.setMouseCursorVisible(true);
+
+    // Main game loop
     while (window.isOpen()) {
+        // Handle events
         while (auto event = window.pollEvent()) {
+            // Close the window
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
+
+            // Handle input based on current state
             switch (currState) {
             case GameState::MAIN_MENU:
                 mainMenu.handleEvent(*event, window);
@@ -82,6 +98,7 @@ int main() {
                     }
                 }
                 break;
+
             case GameState::GAME:
                 gameScreen.handleEvent(*event, window);
                 if (const auto* mouseButton = event->getIf<sf::Event::MouseButtonReleased>()) {
@@ -94,30 +111,35 @@ int main() {
                 }
                 break;
             }
-            
         }
 
+        // Draw the appropriate screen
         window.clear();
         switch (currState) {
         case GameState::MAIN_MENU:
             window.draw(menuBackground);
             mainMenu.draw(window);
             break;
+
         case GameState::SIMULATE:
             window.draw(settingsBackground);
             simulateMenu.draw(window);
             break;
+
         case GameState::PLAY:
             window.draw(settingsBackground);
             playMenu.draw(window);
             break;
+
         case GameState::GAME:
             window.draw(gameBackground);
             gameScreen.draw(window);
             break;
         }
 
+        // Display everything
         window.display();
     }
+
     return 0;
 }
