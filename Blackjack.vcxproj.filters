@@ -49,6 +49,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
+    <ClCompile Include="OptimalPlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,6 +85,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
+    <ClInclude Include="OptimalPlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
